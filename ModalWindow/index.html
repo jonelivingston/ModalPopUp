@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1 align="center">Javascript In Browsers - DOM Fundamentals and Events</h1>
+    <h2 align="center">PROJECT: 2 - Modal Window</h2>
+
+    <div class="modal hide">
+        <button class="cross">❌</button>
+        <h3 class="title">This is Modal: built using Javascript 🔥</h3>
+    </div>
+
+    <center>
+    <button class="btn">Click Modal Popup 🌱 </button>
+    </center>
+<script>
+    const btn = document.getElementsByClassName('btn')[0];
+    const modal = document.getElementsByClassName('modal')[0];
+    const cross = document.getElementsByClassName('cross')[0];
+    const body = document.body;
+    btn.addEventListener('click', function() {
+        modal.classList.remove('hide');
+        body.classList.add('overlay');
+    })
+
+    cross.addEventListener('click', function(){
+        modal.classList.add('hide');
+        body.classList.remove('overlay');
+    })
+
+    document.addEventListener('keydown',function(e){
+        console.log(e.key) //keycode is deprecated instead use key or code. check in stackflow
+
+    })
+
+    console.log(modal.classList);
+</script>
+</body>
+</html>
